@@ -4,8 +4,8 @@ const express =require('express')
 const app = express();
 const cors = require('cors')
 app.use(cors())
-app.listen(1100);
-console.log('server on port 1100')
+app.listen(3000);
+console.log('server on port 3000')
 // definir middlewares
 app.use(bodyParser.json());
 app.use(express.json())
