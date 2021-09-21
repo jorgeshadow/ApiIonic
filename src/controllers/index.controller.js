@@ -2,10 +2,10 @@ const {Pool} =require('pg')
 var ActiveDirectory = require('activedirectory');
 // pool configuration
 const config={
-    user:'postgres',
-    host:'192.168.0.247',
-    password:'postgres',
-    database:'REPORTES_GERENCIALES',
+    user:'wvukyyruyneyxa',
+    host:'ec2-52-0-114-209.compute-1.amazonaws.com',
+    password:'a38cabbfeac360b7187d48305ff7bae3a3af094242c43e6eb2e90d6f27c1c5a4',
+    database:'d6to9hi99g7fid',
     port:'5432'
 }
 const pool=new Pool(config)
@@ -42,7 +42,7 @@ const getarranquetid = async (req,res) => {
   try { 
     var replacePlanta=req.params.planta
     replacePlanta.replace('%20',' ') 
-      const resp =await pool.query(`SELECT * FROM public.reporte_produccion  WHERE negocio='${req.params.id}' AND dia='${req.params.dia}'AND mes='${req.params.mes}'AND anio='${req.params.anio}'and planta='${replacePlanta}' AND hora>='${req.params.minhr}' AND hora<='${req.params.maxhr}' order by modulo_id ASC `);  
+      const resp =await pool.query(`SELECT * FROM public.produccion_inicial  WHERE negocio='${req.params.id}' AND dia='${req.params.dia}'AND mes='${req.params.mes}'AND anio='${req.params.anio}'and planta='${replacePlanta}' AND hora>='${req.params.minhr}' AND hora<='${req.params.maxhr}' order by modulo_id ASC `);  
       res.json(resp.rows)
   } catch (error) {
       console.log(error)
@@ -50,7 +50,7 @@ const getarranquetid = async (req,res) => {
 }
 const getarranquet = async (req,res) => { 
   try {
-      const resp =await pool.query(`SELECT * FROM public.reporte_produccion`); 
+      const resp =await pool.query(`SELECT * FROM public.produccion_inicial`); 
       res.json(resp.rows)
   } catch (error) { 
   } 
