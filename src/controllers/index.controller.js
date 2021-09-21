@@ -2,10 +2,10 @@ const {Pool} =require('pg')
 var ActiveDirectory = require('activedirectory');
 // pool configuration
 const config={
-    user:'wvukyyruyneyxa',
-    host:'ec2-52-0-114-209.compute-1.amazonaws.com',
-    password:'a38cabbfeac360b7187d48305ff7bae3a3af094242c43e6eb2e90d6f27c1c5a4',
-    database:'d6to9hi99g7fid',
+    user:'wlcvydxjcduvtv',
+    host:'ec2-3-219-111-26.compute-1.amazonaws.com',
+    password:'2195fc3836df4dfc73189a5efc9f6ffdd02fd37e25069a821585c4b8edda672c',
+    database:'d11bqp7a0cdlg',
     port:'5432'
 }
 const pool=new Pool(config)
